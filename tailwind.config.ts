@@ -67,6 +67,11 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      screens: {
+        mo: {
+          max: "767px",
+        },
+      },
     },
   },
   plugins: [tailwindcssAnimate],

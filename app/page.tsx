@@ -1,60 +1,41 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
-import DarkMode from "@/components/darkmode/DarkMode";
-import { AppSidebar } from "@/components/dashboard/app-sidebar";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
+import Header from "@/components/layout/Header";
+import Container from "@/components/layout/Container";
+import DeviceStatus from "@/components/dashboard/DeviceStatus";
+import FabricInfo from "@/components/dashboard/FabricInfo";
+import TotalDefectRate from "@/components/dashboard/TotalDefectRate";
+import ColorInspector from "@/components/dashboard/ColorInspector";
+import InspectionSummary from "@/components/dashboard/InspectionSummary";
 
 function Page() {
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 px-4">
-          <div className="flex items-center gap-2">
-            <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
+    <>
+      <Header />
 
-          <div className="ml-auto">
-            <DarkMode />
-          </div>
-        </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-          </div>
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+      <Container>
+        <div className="grid auto-rows-min gap-4 md:grid-cols-4">
+          <DeviceStatus
+            title="기기 상태"
+            description="현재 기기 동작 상태를 제공"
+          />
+
+          <FabricInfo title="원단 정보" description="원단의 기본 정보를 제공" />
+
+          <TotalDefectRate title="전체 결함률" description="1.23" />
+
+          <ColorInspector
+            title="색상 정밀 검사"
+            description="광원의 종류별 손실률을 제공"
+          />
         </div>
-      </SidebarInset>
-    </SidebarProvider>
+
+        <InspectionSummary
+          title="원단 결점 위치"
+          description="원단에서 발생한 염색 결정의 위치"
+        />
+      </Container>
+    </>
   );
 }
 

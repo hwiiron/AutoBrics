@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/darkmode/theme-provider";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/sidebar/app-sidebar";
 
 export const metadata: Metadata = {
   title: "AutoBrics - Dashboard",
@@ -21,7 +23,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <SidebarProvider>
+            <AppSidebar />
+
+            <SidebarInset>{children}</SidebarInset>
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>

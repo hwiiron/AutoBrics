@@ -1,7 +1,7 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
-import DarkMode from "@/components/darkmode/Darkmode";
+import DarkMode from "@/components/darkmode/DarkMode";
 import { AppSidebar } from "@/components/dashboard/app-sidebar";
 import {
   Breadcrumb,

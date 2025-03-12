@@ -103,7 +103,7 @@ function InspectionSummary({ title, description }: CardHeaderType) {
             <ChartTooltip
               cursor={false}
               content={
-                <ChartTooltipContent labelFormatter={(value) => `${value}m`} />
+                <ChartTooltipContent labelFormatter={() => `염색 결점 종류`} />
               }
             />
 

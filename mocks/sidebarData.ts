@@ -1,4 +1,13 @@
-import { LayoutDashboard, SquareCheckBig, User } from "lucide-react";
+import {
+  BarChart3,
+  Building2,
+  Camera,
+  Cpu,
+  FileBarChart,
+  LayoutDashboard,
+  SquareCheckBigIcon,
+  User,
+} from "lucide-react";
 
 const data = {
   user: {
@@ -45,20 +54,45 @@ const data = {
       icon: LayoutDashboard,
     },
     {
-      title: "검수",
-      url: "/auto-mode",
-      icon: SquareCheckBig,
+      title: "검수 통계",
+      url: "#",
+      icon: SquareCheckBigIcon,
       isActive: true,
       items: [
         {
-          title: "자동 모드",
-          url: "/auto-mode",
+          title: "총 검수 현황",
+          url: "#",
         },
         {
-          title: "수동 모드",
-          url: "/manual-mode",
+          title: "납품 기업별 검수 현황",
+          url: "#",
         },
       ],
+    },
+    {
+      title: "기기관리",
+      url: "/",
+      icon: Cpu,
+    },
+    {
+      title: "원격 검수 시스템",
+      url: "/",
+      icon: Camera,
+    },
+    {
+      title: "레포트",
+      url: "/",
+      icon: FileBarChart,
+    },
+    {
+      title: "사용량 통계",
+      url: "/",
+      icon: BarChart3,
+    },
+    {
+      title: "기업 정보",
+      url: "/",
+      icon: Building2,
     },
   ],
 };
